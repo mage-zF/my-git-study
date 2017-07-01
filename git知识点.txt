@@ -1,0 +1,31 @@
+初始化一个Git仓库，在要上传的文件的目录下使用到git init命令来生成一个git仓库
+git add <file>用于提交代码
+git add .是提交所有文件
+add是用于把想要提交的代码添加进来，而commit则是真正的去执行提交操作
+git commit -m "描述信息"
+
+当修改了项目中的内容，但是还没有commit，这是可以用git status来查看那些文件发生了修改
+然后用git diff可以查看修改内容，git diff <filepath>用于查看指定文件的修改
+
+撤销未提交的修改：git checkout <filepath>      
+只能撤销未add的文件中的修改,如果文件已经add添加了可以先撤销文件的提交：git reset HEAD <path>
+然后用checkout撤销修改
+
+查看历史提交记录：git log
+查看一次历史提交记录：git log <id> -1
+查看一次历史提交记录中修改的内容：git log <id> -1 -p
+
+创建分支branch：git branch "branch name"
+查看当前有哪些分支：git branch -a	前面有*的是当前所在的分支
+切换当前所在的分支：git checkout "branch name"
+合并分支，先切换到master分支上：git merge "branch name"		这样就把分支修改的内容合并到master上了
+删除分支:git branch -D "branch name"
+
+与远程版本库的协作：
+下载代码到本地：git clone https://github.com/mage-j/coolweather
+将本地修改同步到远程版本库上：git push origin master	其中origin是远程版本库的git地址，master表示同步到哪一个分支
+将远程版本库上的修改同步到本地：git fetch origin master 	同步下来的代码不会合并到任何分支上，而是存放在origin/master分支上然后通过git merge origin/master将其合并到主分支上
+pull命令相当于fetch 和 merge命令的融合，直接把远程版本库上的修改同步到本地主分支上：git pull origin master
+
+
+

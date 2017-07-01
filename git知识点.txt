@@ -22,7 +22,7 @@ git commit -m "描述信息"
 删除分支:git branch -D "branch name"
 
 与远程版本库的协作：
-下载代码到本地：git clone https://github.com/mage-j/coolweather
+下载代码到本地：git clone https://github.com/mage-j/coolweather		下载在当前路径（用cd命令打开的路径）
 将本地修改同步到远程版本库上：git push origin master	其中origin是远程版本库的git地址，master表示同步到哪一个分支
 将远程版本库上的修改同步到本地：git fetch origin master 	同步下来的代码不会合并到任何分支上，而是存放在origin/master分支上然后通过git merge origin/master将其合并到主分支上
 pull命令相当于fetch 和 merge命令的融合，直接把远程版本库上的修改同步到本地主分支上：git pull origin master
